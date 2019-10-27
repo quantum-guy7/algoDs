@@ -1,6 +1,6 @@
 # algoDs
 a complete algorithm and data structures repository
-#Contributions are welcome:
+# Contributions are welcome:
 
 Contribution guide:
 1. Fork the repo
