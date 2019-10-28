@@ -19,28 +19,28 @@ void bfs(int node,vector<int> v[],int visited[])
 
         node=q.front();
         q.pop();
-	    if(visited[node]==1)
+        if(visited[node]==1)
         {
             continue;
         }
         cout<<node<<" ";
-    	visited[node]=1;
-    	for(int i=0;i<v[node].size();i++)
-    	{
-    		q.push(v[node][i]);
-    	}
+        visited[node]=1;
+        for(int i=0;i<v[node].size();i++)
+        {
+            q.push(v[node][i]);
+        }
     }
 
 } 
 int main() {
-	fastIO;
-	#ifndef ONLINE_JUDGE
+    fastIO;
+    #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
-	#endif
+    #endif
 
-	int n,i,j;
-	int t,q;
+    int n,i,j;
+    int t,q;
     //input graph
     //input no.of nodes,no of edges;
     int m;
@@ -48,28 +48,28 @@ int main() {
     vector<int> v[n+1];//adjacency list of graph
     for(i=0;i<m;i++)
     {
-    	int u1,u2;
-    	cin>>u1>>u2;
-    	v[u1].push_back(u2);
-    	v[u2].push_back(u1);
+        int u1,u2;
+        cin>>u1>>u2;
+        v[u1].push_back(u2);
+        v[u2].push_back(u1);
     }
     int visited[n+1];
+    // for(i=0;i<=n;i++)
+    // {
+    //  for(j=0;j<v[i].size();j++)
+    //  {
+    //      cout<<v[i][j]<<" ";
+    //  }
+    //  cout<<endl;
+    // }
     for(i=0;i<=n;i++)
     {
-    	for(j=0;j<v[i].size();j++)
-    	{
-    		cout<<v[i][j]<<" ";
-    	}
-    	cout<<endl;
-    }
-    for(i=0;i<=n;i++)
-    {
-    	visited[i]=0;
+        visited[i]=0;
     }
     // makign visited array 0 represents this node is not visited 
     // and 1 represents visited node
     //graph input done
     // applying dfs
-    // bfs(1,v,visited);
-	return 0;
+    bfs(1,v,visited);
+    return 0;
 }
