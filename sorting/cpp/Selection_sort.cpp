@@ -1,6 +1,8 @@
+/** Selection sort program in c++ **/
 #include<iostream>
 #include<conio.h>
 using namespace std;
+//A class which is used to get the values
 class data{
 	protected:
 		int i,j,n,a[100],l,ind;
@@ -8,13 +10,13 @@ class data{
 			void get();
 			void dis();
 };
-
+//A class which contain the function which does the selection sort
 class selection:public data{
 	public:
 		void sort();
 		void swap(int,int);
 };
-
+// To get values
 void data::get(){
 	cout<<"Enter the size"<<endl;
 	cin>>n;
@@ -24,7 +26,7 @@ void data::get(){
 		cin>>a[i];
 	}
 }
-
+// To display the output
 void data::dis(){
 	cout<<"The sorted elements are ";
 	for(i=0;i<n;i++)
@@ -32,7 +34,7 @@ void data::dis(){
 		cout<<a[i];
 	}
 }
-
+// Selection sort
 void selection::sort(){
 	for(i=0;i<n-1;i++)
 	{
@@ -48,7 +50,7 @@ void selection::sort(){
 		swap(l,ind);
 	}
 }
-
+// Swapping function
 void selection::swap(int l,int id)
 {
 	int temp;
@@ -58,8 +60,6 @@ void selection::swap(int l,int id)
 }
 int main()
 {
-	//clrscr();
-	
 	selection s;
 	s.get();
 	s.sort();
