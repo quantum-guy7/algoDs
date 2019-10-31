@@ -1,6 +1,5 @@
 def mergeSort(nlist,count):
     print("Splitting ",nlist)
-   # count=0
     if len(nlist)>1:
         mid = len(nlist)//2
         lefthalf = nlist[:mid]
